@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authService } from "fbsetup";
 import {
   signInWithEmailAndPassword,
@@ -12,6 +12,8 @@ import {
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  let history = useNavigate();
 
   const changeHandler = (event) => {
     console.log(event.target.value);
@@ -25,13 +27,17 @@ const Login = () => {
     }
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
     try {
       let data;
-      data = signInWithEmailAndPassword(authService, email, password);
+      data = await signInWithEmailAndPassword(authService, email, password);
+      if (data) {
+        history("/");
+      }
     } catch (error) {
       console.log(error);
+      setError(error.message);
     }
   };
 
@@ -77,13 +83,14 @@ const Login = () => {
               required
             />
             <input type="submit" value="로그인" />
+            {error}
           </form>
           <div>
             <button onClick={socialLoginHandler} name="google">
               구글 계정으로 로그인
             </button>
             <Link to="/register">
-              <button>이메일로 계정 만들기</button>
+              <button>이메일로 회원가입</button>
             </Link>
           </div>
         </fieldset>
