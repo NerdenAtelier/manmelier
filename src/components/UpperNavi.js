@@ -11,19 +11,36 @@ const UpperNavi = ({ isSignedIn }) => {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">만믈리에 메인화면</Link>
+      <nav className="navBar">
+        <div className="navBar_logo">
+          <Link to="/">
+            <h1>MANMELIER</h1>
+          </Link>
+        </div>
+        <ul className="navBar_menus">
+          <li className="navBar_menus_menu">
+            <Link to="/">만화</Link>
           </li>
-          <li>
-            {isSignedIn ? (
-              <p onClick={signOutHandler}>로그아웃</p>
-            ) : (
-              <Link to="/login">로그인</Link>
-            )}
+          <li className="navBar_menus_menu">
+            <Link to="/">웹툰</Link>
+          </li>
+          <li className="navBar_menus_menu">
+            <Link to="/">퀴즈</Link>
           </li>
         </ul>
+        <>
+          <div className="navBar_signIn">
+            {isSignedIn ? (
+              <p id="signOut" onClick={signOutHandler}>
+                로그아웃
+              </p>
+            ) : (
+              <p id="signIn">
+                <Link to="/login">로그인</Link>
+              </p>
+            )}
+          </div>
+        </>
       </nav>
     </>
   );

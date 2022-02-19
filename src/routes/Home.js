@@ -7,14 +7,9 @@ const Home = ({ isSignedIn }) => {
   return (
     <>
       <header>
-        <div id="logo">
-          <Link to="/">
-            <h1>MANMELIER</h1>
-          </Link>
-        </div>
         <UpperNavi isSignedIn={isSignedIn} />
       </header>
-      <div id="main-window">
+      <div className="main-window">
         {isSignedIn ? (
           <h1>여기가 기본 메인페이지입니다.(로그인 되었음)</h1>
         ) : (

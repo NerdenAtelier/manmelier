@@ -1,34 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap");
-
 * {
   text-decoration: none;
 }
 
-header {
+/* header {
   width: 100%;
   height: 100px;
   background-color: #07c;
-}
+} */
 
-#logo {
-  float: left;
-  width: 100px;
-  height: 100px;
-}
-
-#logo h1 {
-  font-family: "Libre Barcode 128 Text", cursive;
-  font-weight: 500;
-  font-size: 25px;
-  color: black;
-  padding-left: 10px;
-  /* text-shadow: 0 -1px 0 #222; */
-}
-
-#main-window {
-  clear: both;
-  width: 100%;
-  height: 300px;
-  background-color: orange;
-  overflow: hidden;
+.main-window {
+  display: grid;
+  grid-template-columns: 3fr;
+  min-height: 500px;
+  text-align: center;
+  align-content: center;
 }

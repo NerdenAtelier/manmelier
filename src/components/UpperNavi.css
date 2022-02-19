@@ -1,16 +1,65 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+
+.navBar {
+  background-color: #333333;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px;
+  height: 40px;
+}
+
+.navBar_menus {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 50%;
+  padding-top: 10px;
+}
+
+.navBar_menus_menu > * {
+  font-family: "Noto Sans KR", sans-serif;
+  text-decoration: none;
+  color: white;
+  margin-right: 70;
+  font-size: 15px;
+}
+
+.navBar_logo h1 {
+  font-family: "Libre Barcode 128 Text", cursive;
+  font-size: 25px;
+  color: white;
+  padding-top: 7px;
+}
+
+.navBar_logo > * {
   text-decoration: none;
 }
 
-nav {
-  float: right;
-  width: 90%;
-  height: 100px;
-  background-color: green;
+.navBar_signIn {
+  list-style: none;
+  display: flex;
+  padding-top: 12px;
+  text-decoration: none;
 }
 
-li {
+.navBar_signIn a {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+#signOut {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+/* li {
   float: left;
   display: block;
   padding: 8px;
-}
+} */
