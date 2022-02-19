@@ -41,6 +41,7 @@ const Login = () => {
     }
   };
 
+  //타 서비스 계정을 이용한 로그인 시
   const socialLoginHandler = async (event) => {
     const {
       target: { name },
@@ -55,7 +56,10 @@ const Login = () => {
       provider = new FacebookAuthProvider();
     }
 
-    const data = signInWithPopup(authService, provider);
+    const data = await signInWithPopup(authService, provider);
+    if (data) {
+      history("/");
+    }
   };
 
   return (

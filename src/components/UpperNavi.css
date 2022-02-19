@@ -1,0 +1,16 @@
+* {
+  text-decoration: none;
+}
+
+nav {
+  float: right;
+  width: 90%;
+  height: 100px;
+  background-color: green;
+}
+
+li {
+  float: left;
+  display: block;
+  padding: 8px;
+}
